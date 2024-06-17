@@ -1,0 +1,64 @@
+{
+  "extends": [
+    "config:base",
+    ":enableRenovate",
+    ":assignee(alexcosta97)",
+    ":reviewer(alexcosta97)",
+    ":automergeDisabled",
+    ":separateMajorReleases",
+    ":combinePatchMinorReleases",
+    ":ignoreUnstable",
+    ":labels(Type: Maintenance,Priority: 3 - Medium)",
+    ":enableVulnerabilityAlertsWithLabel(security)",
+    ":maintainLockFilesWeekly",
+    ":npm",
+    ":dependencyDashboard",
+    ":disableRateLimiting",
+    ":pinSkipCi",
+    ":pinVersions",
+    ":prImmediately",
+    ":prHourlyLimitNone",
+    ":rebaseStalePrs",
+    ":renovatePrefix",
+    ":semanticCommits",
+    ":semanticCommitTypeAll(build)",
+    ":timezone(Europe/London)",
+    ":unpublishSafe",
+    ":updateNotScheduled",
+    ":widenPeerDependencies",
+    "replacements:all",
+    "group:nextjsMonorepo",
+    "group:reactMonorepo",
+    "group:definitelyTyped",
+    "group:jestMonorepo",
+    "group:linters",
+    "group:unitTest",
+    "group:test",
+    "helpers:pinGitHubActionDigests",
+    "schedule:nonOfficeHours",
+    "workarounds:typesNodeVersioning"
+  ],
+  "commitMessageTopic": "{{prettyDepType}} {{depName}}",
+  "commitMessageExtra": "to {{{newValue}}}",
+  "postUpdateOptions": ["pnpmDedupe"],
+  "packageRules": [
+    {
+      "matchUpdateTypes": ["lockFileMaintenance"],
+      "prCreation": "immediate",
+      "prPriority": 10
+    },
+    {
+      "matchDatasources": ["npm"],
+      "stabilityDays": 2
+    }
+  ],
+  "vulnerabilityAlerts": {
+    "enabled": true,
+    "labels": ["Type: Security", "Priority: 1 - Critical"],
+    "transitiveRemediation": true
+  },
+  "osvVulnerabilityAlerts": true,
+  "prConcurrentLimit": 1,
+  "schedule": ["after 9am every day and before 7pm every day"],
+  "configMigration": true
+}

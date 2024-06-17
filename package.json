@@ -1,0 +1,23 @@
+{
+  "name": "renovate-config",
+  "version": "1.0.0",
+  "description": "Shareable renovate config for this org's projects",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "Alexandre Costa <alex@alexcosta.dev> (https://alexcosta.dev/)",
+  "repository": "git@github.com:backsoftware/renovate-config.git",
+  "license": "GPL-3.0-only",
+  "packageManager": "pnpm@9.2.0+sha512.98a80fd11c2e7096747762304106432b3ddc67dcf54b5a8c01c93f68a2cd5e05e6821849522a06fb76284d41a2660d5e334f2ee3bbf29183bf2e739b1dafa771",
+  "devDependencies": {
+    "@babel/core": "7.24.7",
+    "@babel/plugin-syntax-import-assertions": "7.24.7",
+    "@babel/preset-env": "7.24.7",
+    "jest": "29.7.0",
+    "renovate": "37.409.1"
+  },
+  "jest": {
+    "testEnvironment": "node"
+  }
+}

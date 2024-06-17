@@ -1,0 +1,3 @@
+{
+  "extends": ["github>BackSoftware/renovate-config"]
+}
